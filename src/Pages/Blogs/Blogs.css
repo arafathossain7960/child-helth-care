@@ -1,0 +1,16 @@
+.blogs{
+    margin: 50px 100px;
+    text-align: center;
+}
+.blogs h1{
+    padding: 10px 0px;
+}
+.blogs-container img{
+    width: 60%;
+}
+.blogs-container h3{
+    padding: 10px 0px;
+}
+.blogs-container p{
+   
+}

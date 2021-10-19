@@ -1,0 +1,16 @@
+.camp-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 10px;
+    margin: 3px 0px;
+    background-color: white;
+    width: 80%;
+    border-radius: 5px;
+    color:#033270 ;
+}
+.camp{
+    margin: 0 auto;
+    padding: 30px 10px;
+    
+}

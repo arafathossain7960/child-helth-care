@@ -1,0 +1,13 @@
+.register-container{
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(#FEDFD4,#9DCEE2 );
+
+}
+.register-contain{
+    background-color: white;
+    border: 1px solid #FEDFD4;
+    border-radius: 15px;
+    margin: 30px;
+    padding: 30px 55px; 
+}

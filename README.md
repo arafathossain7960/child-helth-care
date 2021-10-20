@@ -1,6 +1,6 @@
 ### Website Name : Child Health Camp
 
-Here is live site link you can visit :(https://github.com/facebook/create-react-app).
+Here is live site link you can visit :(https://health-camp-3cdb8.web.app/).
 # This Website hosted in the firebase could hosting. 
 ## About the site 
 a) Its created for child heath camping
@@ -33,8 +33,8 @@ This site is totally none profitable, it's for child health.
 
 
 
-
-(https://facebook.github.io/create-react-app/docs/deployment) 
+# you can visit:
+(https://health-camp-3cdb8.web.app/)
 
 
 

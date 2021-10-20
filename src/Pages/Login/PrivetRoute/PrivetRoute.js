@@ -8,13 +8,14 @@ const PrivetRoute = ({children, ...rest}) => {
     if(isLoading){
         return   <Spinner className="text-center" animation="border" variant="primary" />
     }
+    
     return (
         <Route
         {...rest}
         render={({location}) => user.email
         ?children 
         :<Redirect
-        to={{pathname:'./login',
+        to={{pathname:'/login',
         state:{from:location}
     }}
         ></Redirect>}

@@ -9,6 +9,7 @@ const googleProvider = new GoogleAuthProvider();
 
 
 const useFirebase=()=>{
+    const [loginError, setLoginError]=useState('');
     const [error, setError]=useState('');
     const [user, setUser]=useState({});
     const [isLoading, setIsLoading]=useState(true)
@@ -22,47 +23,61 @@ const useFirebase=()=>{
             console.log(result.user)
             setUser(result.user)
         })
+        .catch(error=>{
+            setError(error.massage)
+        })
         .finally(()=>setIsLoading(false))
     }
   // create new user with email and password
-  const newUserCreateWithEmailAndPassword =(email, password, name)=>{
+  const newUserCreateWithEmailAndPassword =(email, password)=>{
+      if((email&&password)==""){
+return setError("please enter your email and password")
+      }
      if(password.length < 6){
-        return setError('password must be 6 ')
+        return setError('password must be 6 characters ')
      }
     setIsLoading(true)
     createUserWithEmailAndPassword(auth, email, password)
     .then(result =>{
         setUser(result.user);
     })
+    .catch(error=>{
+        setError(error.massage)
+    })
     .finally(()=>setIsLoading(false));
+
     
   }  
   // login with user Email and password ----
   const loginWithUserEmailAndPassword=(email, password)=>{
+      if((email&&password)==''){
+          return setLoginError("please enter your email and password")
+      }
       setIsLoading(true)
     signInWithEmailAndPassword(auth, email, password)
     .then(result =>{
-        console.log(result.user);
         setUser(result.user);
+    })
+    .catch(error=>{
+        setError(error.massage)
     })
     .finally(()=>setIsLoading(false));
   }
-  // update user profile ---
-//   const updateUserProfile=name=>{
-//     updateProfile(auth.currentUser, {displayName:name})
-//     .then(result =>{})
-//   }
+
 //user login out 
 const userLoginOut = ()=>{
     setIsLoading(true)
     signOut(auth)
     .then(()=>{
-        setUser({});
+        // setUser({});
+    })
+    .catch(error=>{
+        setError(error.massage)
     })
     .finally(()=>setIsLoading(false));
 }
 
-// user observetion 
+// user observation
 useEffect(()=>{
  const unSubscribed = onAuthStateChanged(auth, user=>{
     if(user){
@@ -80,7 +95,8 @@ return{
     userLoginOut,
     loginWithGoogle,
     user,
-    error
+    error,
+    loginError
 } 
 
 }

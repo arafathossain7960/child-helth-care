@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, } from '@fortawesome/free-solid-svg-icons';
 import './Login.css';
 import useAuth from '../../hooks/useAuth';
 
@@ -9,7 +7,7 @@ import useAuth from '../../hooks/useAuth';
 const Login = () => {
     const [email, setEmail]=useState('');
     const [password, setPassword]=useState('');
-    const {loginWithGoogle, user, loginWithUserEmailAndPassword}=useAuth();
+    const {loginWithGoogle, user,loginError, error, loginWithUserEmailAndPassword}=useAuth();
 
     const handleEmailChange=(e)=>{
         
@@ -35,7 +33,7 @@ const Login = () => {
                 <div className="text-center">
                 <button onClick={()=>loginWithUserEmailAndPassword(email, password)}  className="button ">Login</button>
                 </div>
-                <p className="text-right">Forgot password?</p>
+                
           </div>
             
     
@@ -44,8 +42,8 @@ const Login = () => {
                 <button onClick={loginWithGoogle} className="btn btn-primary" > Google sing in</button>
                 
                 <p><Link to="/register">Creat new account?</Link></p>
-               
-
+               <small className="text-danger">{loginError}</small>
+                
                 </div>
              </div>
              </div>

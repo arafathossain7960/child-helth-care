@@ -9,7 +9,7 @@ const Header = () => {
         <>
         <Navbar collapseOnSelect expand="lg" className="header-bg sticky-top" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+                <Navbar.Brand >Child Health <span className="brand-title">Camp</span> </Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -29,7 +29,7 @@ const Header = () => {
 
                 }
                 {
-                    user.email && <span>{user.email}</span> 
+                    user.email && <span>{user?.displayName||user.email}</span> 
                     
                 }
                 </Navbar.Collapse>

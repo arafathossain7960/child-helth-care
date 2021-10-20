@@ -3,10 +3,10 @@ import './Camp.css';
 
 const Camp = () => {
     return (
-        <div className="text-center bg-dark  camp">
-            <h1 className="text-light">This is the schedule for attend camp</h1>
+        <div className=" camp">
+            <h1 className="text-primary py-3">This is the schedule for attend camp</h1>
             <div className="camp-container">
-                <h2>Are Name</h2> <h3>Date</h3>
+                <h2>Area Name</h2> <h3>Date</h3>
            </div>
            <div className="camp-container">
                 <h4>Home land</h4> <h6>25/10/2021</h6>

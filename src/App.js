@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Header from './Pages/Home/Header/Header';
 import Footer from './Pages/Home/Footer/Footer';
-import Services from './Pages/Services/Services';
 import Login from './Pages/Login/Login';
 import Register from './Pages/Register/Register';
 import Blogs from './Pages/Blogs/Blogs';
@@ -18,6 +17,7 @@ import Camp from './Pages/Camp/Camp';
 import AuthProvider from './context/AuthProvider';
 import PrivetRoute from './Pages/Login/PrivetRoute/PrivetRoute';
 import Thank from './Pages/Donation/Thank/Thank';
+import SingleService from './Pages/SingleService/SingleService';
 function App() {
   return (
     <AuthProvider>
@@ -30,23 +30,23 @@ function App() {
         <Route path='/home'>
         <Home></Home>
         </Route>
-        <PrivetRoute path="/services/:id">
-          <Services></Services>
-        </PrivetRoute>
         <Route path="/login">
           <Login></Login>
         </Route>
         <Route path="/register">
           <Register></Register>
         </Route>
-        <PrivetRoute path="/blogs">
+        <PrivetRoute exact path="/blogs">
           <Blogs></Blogs>
         </PrivetRoute>
-        <PrivetRoute path="/donation">
+        <PrivetRoute exact path="/donation">
           <Donation></Donation>
         </PrivetRoute>
-        <PrivetRoute path="/camp">
+        <PrivetRoute exact path="/camp">
           <Camp></Camp>
+        </PrivetRoute>
+        <PrivetRoute path="/service/:id">
+        <SingleService></SingleService>
         </PrivetRoute>
         <Route path="/thank">
         <Thank></Thank>

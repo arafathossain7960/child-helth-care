@@ -1,0 +1,21 @@
+.single-service-container{
+    margin: 0px 100px ;
+    padding: 50px 20px;
+    text-align: center;
+
+}
+.single-service{
+    margin: 0 auto;
+}
+.single-service span{
+    color: rgb(138, 56, 56);
+    font-weight: bolder;
+}
+
+.single-service img{
+    width: 60%;
+    height: 300px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+}

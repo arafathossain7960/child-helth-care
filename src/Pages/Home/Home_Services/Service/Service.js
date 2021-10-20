@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {  faBookReader } from '@fortawesome/free-solid-svg-icons';
 import './Service.css';
 
 const Service = ({service}) => {
@@ -11,9 +13,10 @@ const Service = ({service}) => {
           <div className="p-3">
             <h4>{operationName}</h4>
             <p>{description}</p>
-            <Link to={`/services/${id}`}   className="btn btn-primary" >
-          Reade more
-            </Link>
+           <Link to={`/service/${id}`}>
+             <button className="btn btn-primary"> <FontAwesomeIcon icon={faBookReader}/> Read more</button>
+          
+           </Link>
             </div>
           </div>
             
